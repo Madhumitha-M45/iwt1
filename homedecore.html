@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Crafts - Homedecore Collection</title>
+    <link rel="stylesheet" href="iwt.css">
+    <link rel="icon" href="altered_logo.png" type="image/png">
+<style>
+/* Basic Reset */
+body, h1, h2, h3, h4, p, ul, li, a {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+#profile
+{
+    height:20px;
+    width: 20px;
+}
+header .logo img {
+  max-width: 45px;
+  margin-right: 1rem;
+}
+
+/* Container */
+.container {
+    width: 70%;
+    margin: 0 auto;
+
+}
+.menu ul{
+    list-style:none;
+    display:flex;
+}
+.menu ul li{
+    padding :5px 5px;
+    position:relative;
+}
+.menu ul li a{
+    color:white;
+    text-decoration:none;
+    font-size:20px;
+    transition: all 0.3s;
+
+}
+.menu ul li a:hover{
+    color:orange;
+
+}
+/*drop-down*/
+/* Hide dropdown by default */
+.drop{
+    display: none;
+}
+/* Show dropdown on hover */
+.menu ul li:hover .drop {
+    display: block;
+}
+.fas{
+    float:right;
+    margin-left:10px;
+    padding-top:3px;
+}
+.menu ul li:hover .drop{
+    display:block;
+    position:absolute;
+    left:0;
+    top:100%;
+    background-color: brown;
+}
+.drop ul{
+    display:block;
+    margin:10px;
+}
+.drop ul li{
+    width:150px;
+    padding:10px;
+}
+
+/* Container */
+.container {
+    width: 70%;
+    margin: 0 auto;
+}
+/* Header */
+header {
+    background: #333;
+    color: white;
+    padding: 10px 0;
+}
+.header .logo {
+    display: flex;
+    align-items: center;
+}
+
+.header .logo img {
+    width: 30px;
+    margin-right: 5px;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: flex-end;
+}
+
+header nav ul li {
+    list-style: none;
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.header .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.header .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Hero Section */
+#hero {
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+}
+
+#hero .hero-text h2 {
+    font-size: 30px;
+}
+
+#hero .hero-text p {
+    font-size: 18px;
+    margin: 20px 0;
+}
+
+#hero .hero-text .btn {
+    background: #e91e63;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+#products {
+    padding: 30px 0;
+}
+
+#products h2 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 5px;
+    justify-content: space-around;
+    margin-left: 90px;
+}
+.product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    margin: 0 auto;
+}
+.product img {
+    width: 100%;
+    height: 300px;
+    border-radius: 5px;
+}
+.product .btn {
+    display: block;
+    margin: 10px auto;
+    background: #e91e63;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+}
+/* Features Section */
+#features {
+    padding: 50px 0;
+    background: #f9f9f9;
+}
+
+#features h2 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.feature img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.feature h3 {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.feature p {
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+}
+/* Testimonials Section */
+#testimonials {
+    padding: 50px 0;
+}
+#testimonials h2 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+.testimonial {
+    background: #f1f1f1;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.testimonial p {
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.testimonial h4 {
+    font-weight: normal;
+    color: #e91e63;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+.footer-columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+.footer-column h3 {
+    margin-bottom: 10px;
+}
+.footer-column p,
+.footer-column ul {
+    font-size: 14px;
+    color: #ccc;
+}
+.footer-column ul li {
+    list-style: none;
+}
+.footer-column ul li a {
+    color: #ccc;
+    text-decoration: none;
+}0
+footer p {
+    margin-top: 20px;
+    font-size: 12px;
+}
+</style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="altered_logo.png" alt="HASTAKALA Logo">
+                <h1>HASTAKALA</h1>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li class="dropdown"><a href="#">Products <i class="fas fa-caret-right"></i></a>
+                        <div class="drop">
+                            <ul>
+                                <li><a href="#">Women</a></li>
+                                <li><a href="hastakalame.html">Men</a></li>
+                                <li><a href="homedecore.html">Home Decor</a></li>
+                                <li><a href="homeware.html">Kitchenware</a></li>
+                                <li><a href="painting.html">Painting</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="#cart"><img src="fcart.jpg" alt="Cart" id="profile"></a></li>
+                    <li><a href="#login">Login</a></li>
+               
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero" style="background-image: url('https://www.mystore.in/s/62ea2c599d1398fa16dbae0a/66979d3a7009230024be524e/whatsapp-image-2024-07-17-at-3-59-53-pm.jpeg');">
+        <div class="hero-text">
+            <h2>Indian Crafts - Homedecor Collection</h2>
+            <p>Embrace the elegance of traditional Indian craftsmanship.</p>
+            <a href="#products" class="btn">Explore Now</a>
+        </div>
+    </section>
+    <section id="products" class="container">
+        <h2>Explore Our Homedecore Collection</h2>
+        <div class="product-grid">
+            <div class="product">
+                <img src="https://m.media-amazon.com/images/I/91a4sutchOL._AC_UF894,1000_QL80_.jpg" height="100px" alt="Sherwani">
+                <h3> Dolls</h3>
+                <p>Musician Dolls Wall Hanging Metal Showpieces.</p>
+                <a href="#" class="btn">Buy Now</a>
+            </div>
+            <div class="product">
+                <img src="https://images.glowroad.com/faceview/g9h/i3j/bf/b5i/imgs/pd/1668275286746__BMXCV-xlgn400x400.jpg?productId=P-9268010" height="100px" width="50px" alt="decore">
+                <h3>wall hanging</h3>
+                <p>Handmade Traditional Gujrati Wall Hanging decor</p>
+                <a href="#" class="btn">Buy Now</a>
+            </div>
+            <div class="product">
+                <img src="https://img.freepik.com/premium-photo/mahi-home-decor-diwali-diyas-traditional-handmade-terracotta-clay-diya-mitti-deepak-diwali_1099388-11486.jpg" alt="Handmade Mens Mirror Work Chevron Kurta Pyjama">
+                <h3>diya</h3>
+                <p>erracotta Clay Diya Mitti Deepak for Diwali</p>
+                <a href="#" class="btn">Buy Now</a>
+            </div>
+            <div class="product">
+                <img src="https://5.imimg.com/data5/SELLER/Default/2022/3/SZ/PD/RA/4885898/marble-bottle-500x500.jpg" alt="Cotton dhoti">
+                <h3>Leather camel</h3>
+                <p>Brown Traditional Handmade Leather Camel </p>
+                <a href="#" class="btn">Buy Now</a>
+            </div>
+            <div class="product">
+                <img src="https://cdn11.bigcommerce.com/s-8smrzb0w7f/images/stencil/1280x1280/products/52247/53813/91rbC%2BIZQRL._SL1500___48688.1602859087.jpg?c=1?imbypass=on" alt="Maroon Dhupion Silk Traditional Wear Plain Dhoti Kurta">
+                <h3> Buddha tree</h3>
+                <p>Mahalaxmi Art Handmade Buddha Tree</p>
+                <a href="#" class="btn">Buy Now</a>
+            </div>
+            <div class="product">
+                <img src="https://rukminim2.flixcart.com/image/850/1000/koynr0w0/toran/q/d/v/nupur46-nuputudio-original-imag3arhqzx2pagz.jpeg?q=20&crop=false" alt="dhoti">
+                <h3>vinayagar leaf tree</h3>
+                <p>Golden Lord Vinayagar Leaf .</p>
+                <a href="#" class="btn">Buy Now</a>
+            </div>
+            <div class="product">
+                <img src="https://i.etsystatic.com/27894885/r/il/ec3e18/3413918142/il_570xN.3413918142_nl07.jpg" height="100px" alt="Kantha Quilt">
+                <h3>light holder</h3>
+                <p>Metal Tea Light Holder</p>
+                <a href="#" class="btn">Buy Now</a>
+            </div>
+            <div class="product">
+                <img src="https://5.imimg.com/data5/ANDROID/Default/2021/5/TI/ME/VU/5020809/product-jpeg.jpg" height="100px" alt="Kashmiri Shawl">
+                <h3>clay pot</h3>
+                <p>Madhubani Painted Clay Pots .</p>
+                <a href="#" class="btn">Buy Now</a>
+            </div>
+<div class="product">
+                <img src="https://5.imimg.com/data5/SELLER/Default/2022/3/GI/CA/YL/16004298/antique-wall-decor-wall-frame-500x500.jpeg" height="100px" alt="Kashmiri Shawl">
+                <h3>Culturam metal doll</h3>
+                <p>Culturam Metal Handicraft Antique </p>
+                <a href="#" class="btn">Buy Now</a>
+            </div>
+        </div>
+    </section>
+    <section id="testimonials" class="container">
+        <h2>What Our Customers Say</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial">
+                <p>"The Dolls I bought is absolutely stunning. The quality and craftsmanship are exceptional."</p>
+                <h4>- Shiva, Mumbai</h4>
+            </div>
+            <div class="testimonial">
+                <p>"I love the unique pieces. They add a perfect touch to my traditional outfits."</p>
+                <h4>- Krishna, Delhi</h4>
+            </div>
+            <div class="testimonial">
+                <p>"The customer service is fantastic. They helped me pick the perfect gift for my mother."</p>
+                <h4>- Karthikeya, Bangalore</h4>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h3>About HASTAKALA</h3>
+                    <p>HASTAKALA is dedicated to preserving and promoting the rich heritage of Indian crafts.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="index.html#products">Products</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <p>Email: info@hastakala.com</p>
+                    <p>Phone: 123-456-7890</p>
+                </div>
+            </div>
+            <p>&copy; 2024 HASTAKALA. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

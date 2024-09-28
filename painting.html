@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Crafts - painting Collection</title>
+    <link rel="stylesheet" href="iwt.css">
+    <link rel="icon" href="altered_logo.png" type="image/png">
+<style>
+/* Basic Reset */
+body, h1, h2, h3, h4, p, ul, li, a {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+.img{
+    border-radius: 2px;
+  padding: 2px;
+  width: 2px;
+}
+#profile
+{
+    height:20px;
+    width: 20px;
+}
+header .logo img {
+  max-width: 45px;
+  margin-right: 1rem;
+}
+/* Container */
+.container {
+    width: 70%;
+    margin: 0 auto;
+
+}
+.menu ul{
+    list-style:none;
+    display:flex;
+}
+.menu ul li{
+    padding :5px 5px;
+    position:relative;
+}
+.menu ul li a{
+    color:white;
+    text-decoration:none;
+    font-size:20px;
+    transition: all 0.3s;
+
+}
+.menu ul li a:hover{
+    color:orange;
+
+}
+/*drop-down*/
+/* Hide dropdown by default */
+.drop{
+    display: none;
+}
+/* Show dropdown on hover */
+.menu ul li:hover .drop {
+    display: block;
+}
+.fas{
+    float:right;
+    margin-left:10px;
+    padding-top:3px;
+}
+.menu ul li:hover .drop{
+    display:block;
+    position:absolute;
+    left:0;
+    top:100%;
+    background-color: brown;
+}
+.drop ul{
+    display:block;
+    margin:10px;
+}
+.drop ul li{
+    width:150px;
+    padding:10px;
+}
+/* Header */
+header {
+    background: #333;
+    color: white;
+    padding: 10px 0;
+}
+.header .logo {
+    display: flex;
+    align-items: center;
+}
+
+.header .logo img {
+    width: 30px;
+    margin-right: 5px;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: flex-end;
+}
+
+header nav ul li {
+    list-style: none;
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.header .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.header .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Hero Section */
+#hero {
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+}
+
+#hero .hero-text h2 {
+    font-size: 30px;
+}
+
+#hero .hero-text p {
+    font-size: 18px;
+    margin: 20px 0;
+}
+
+#hero .hero-text .btn {
+    background: #e91e63;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+#products {
+    padding: 30px 0;
+}
+
+#products h2 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+/*chat*/
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+.footer-column ul li a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 5px;
+    justify-content: space-around;
+    margin-left: 90px;
+}
+.product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    margin: 0 auto;
+}
+.product img {
+    width: 300px;
+    height: 400px;
+    border-radius: 5px;
+}
+.product h3 {
+    margin: 10px 0;
+    text-align: center;
+}
+.product p {
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+}
+.product .btn {
+    display: block;
+    margin: 10px auto;
+    background: #e91e63;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+}
+/* Features Section */
+#features {
+    padding: 50px 0;
+    background: #f9f9f9;
+}
+
+#features h2 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.feature img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.feature h3 {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.feature p {
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+}
+/* Testimonials Section */
+#testimonials {
+    padding: 50px 0;
+}
+#testimonials h2 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+.testimonial {
+    background: #f1f1f1;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.testimonial p {
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.testimonial h4 {
+    font-weight: normal;
+    color: #e91e63;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+.footer-columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+.footer-column h3 {
+    margin-bottom: 10px;
+}
+.footer-column p,
+.footer-column ul {
+    font-size: 14px;
+    color: #ccc;
+}
+.footer-column ul li {
+    list-style: none;
+}
+.footer-column ul li a {
+    color: #ccc;
+    text-decoration: none;
+}0
+footer p {
+    margin-top: 20px;
+    font-size: 12px;
+}
+</style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="altered_logo.png" alt="HASTAKALA Logo">
+                <h1>HASTAKALA</h1>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li class="dropdown"><a href="#">Products <i class="fas fa-caret-right"></i></a>
+                        <div class="drop">
+                            <ul>
+                                <li><a href="women.html">Women</a></li>
+                                <li><a href="hastakalame.html">Men</a></li>
+                                <li><a href="homedecore.html">Home Decor</a></li>
+                                <li><a href="homeware.html">Kitchenware</a></li>
+                                <li><a href="painting.html">Painting</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="#cart"><img src="fcart.jpg" alt="Cart" id="profile"></a></li>
+                    <li><a href="#login">Login</a></li>
+               
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero" style="background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxITEhIQEhIVFhUVFRUPDxAVFRAVEA8PFRUWFhUVFRUYHSggGBolGxUVITEhJSkrLi4uFx8zODMtNygtLi0BCgoKDg0OGhAQGy0lHyUrLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0vLS0tKy0tLS0tLS0tLf/AABEIALcBEwMBIgACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAAEAAECAwUGBwj/xABCEAABBAEDAQYEBAQCBgsAAAABAAIDEQQFEiExBhMiQVFxMmGBkRRSodFCcrHBI0NEU4Ki4fEHFRYkRWKSssLS8P/EABkBAAMBAQEAAAAAAAAAAAAAAAECAwAEBf/EADERAAICAgECAgYKAwAAAAAAAAABAhEDEiEEMRNBIlFhgaHwBRQyUnGRwdHh8UJisf/aAAwDAQACEQMRAD8A8TTpBJKjoEpUknTBoSekgE4Cw6QwCklScLDpCpJJOtYRUnpIKQCFhoYBSEak0ImNiWxlEEMagQtCRiEeFrM40U0mpW0m2o2LRXSVKe1LatZqK6SpXxxWim4iDmbUzaSpGTY9IZzUVIVxK6SpSpKkbQupBJSpKkQURTUpUmpYFDUmpSTLAoikpJiEKBQyZOklAPSekydMEdOmUmi1rHSHATrQx8IfxIg4jPRTeVFVBmQki8rF28johaTKdrgNDJwlSkhZhAKxrFABExLWNFENikx9KcpCqQbHLTL8r4rm+PmqSpAJ9qXZGK6S2q3altQ3NRVtTbVdtTbVtgUWYrVqxsFLLi4RXf0kk+RqGzGhZUgRc8toZwTwEkimkqVhCalSxKK6TEKdJiEbBRCkylSRC1i0QSpOmRsRoZMnKSNgI0kkkhaAIFOmThAwkVgN8SGV+K+ikl2Hj3NdhVlqlhVoK5GzqRYyDcD6IJ2I0EharXhrECUsZsZxQDNjVyEPS1nNWc9vKvCdiOIzGqdJMUyU2wUis89VIBSDVMNSuQaIhqmGf8vMqbWKxsaRzCUhifYi2wqX4dJ4gaAS1R2o10KqMaKmahoIrVksPCeI0pSyobOzUZz2qshXvCgWqykI0UkJqVpao7f3PyTqQGiohRIVpCgQmUhWicEdq+XHFKiN9KyTI4SNuzcUBPCgVY5RpVTJNEEykQolGxGhkk6ZYFCCkkE4CAUhAKQCdrVcyNK3RVIeKdwV34wqHdJtim9WOkw3HmLuqMbGsuLhGR5BXPOL8isfaXytoLOdGteCPd1T5GMAkjk1dDuNmNsU2sV7o07WKu4NSUGNaIOGiMRoRxaKXLLK7KRhwZLMdFxYR9EdiQAldLiaaCFDJ1FDKBy8WF8la7B+S6saYPRTfpvHRT8ewUjiJ8SkDJCuxzcGr4WFk49K0Mth1MR0aqcxaUkKodEuhZBXEALFExrWgwbRJ0nhB9RFA8Js5wsUdq1MrELTSFEStHImrEcGC90VW+OltwQCkPmQgLRzW6A4cWY5aolqJc1Q2LoUiTiUhqRarCExRsGoO4KBCueFAtTpk2itJT2pI2LqMApAKTWKQag2OkOwIqJqoaETEFKbKxReyK1M4qlCUVuC5ZSaZaMUzOdDSdjEW8KsNR34DqX48tK2WW1Q1qsaxSaV2OkVbFNsaubGrmRoOYyiVRMKKbaLxcYFWSwALnlktlFDghhmiun07J6Bc1CFs4Dui58nIaOswYd5A9SB91u67pjWbNooFtH5kef6rM7MvBkjHzv7c/2XUa+R3Yd6Or7g/smxY08M5PvxXu7nn5cjWWKOC1LEFFcnnwcldpqkwork853JUscmdsFwYUsSo7vlHzBDkLpUh6DceIUi4Y1nwZNcFXfjgFGUZWUTVE8/TwVgZmLtK3Tn31WVny7lfC5Lhk5pMzu8rofqhp32iHMVTmLsjRBoDLFfjSBrXNLQSap3NtHoFIxqDolXZMm4g+Q0Xwhy1GOiVL2qkZE2gcNUjEiIoSVKaMjyR35oGoAWpJOKdVJHU4+jM2WetLBzINriAio9ZcG7UH3m42VyYo5ItuTOnJPG0lEuxMQu4AWk7R5Giy0rd7E4rHPG5eg6jhx92eB0Xn9T17hk1SL48MaV+Z4s9hCTXrR1mMB5r1WcxvK7Yy2jZOS1dFrRatEa2+zuimZwC6zM7FUyx1pceXrIY5asqo+tnnICsai87DLHEIdsaspbKzVXAdp+myy/A3j8x4b90a/R3t+ISf7EMjh90DBIWt4c5pH5XOH9FazXshvw5Lh77Hf+4Fc8lkb4qvn8SqpIOjYxvUTfWOv6qYMDurnj32BDxdsM4f6SD/NFB/ZoRTO2ub5ux3fzR/s4JHhn7Pzf7GU3934hmLgYx/zHfeNbGHo+Of8AMf8Adi5//tfP/FBhu94n/wB3p29rD54OGfaMj+6T6vJ/5GlL/Vr3o77TNNiY4ObI++a5Z6KOk5YyG5DJJXXFO+IHwgOa0gsNetH9FxbO17R/4fjfr+ykO17BZGn4w3Hc4g1ud6nw9V14qhilB9+a96OWWOTldP4fudTmaVCf8133YsTL0iEf5x/3Fmv7Vg/6Dj/cn+yHl7Sk9MTGH+y5391wfV8i8zox8d0/gLLxIW/5hP0b+6BcyH/WO/8AT/xUn9oX+UOMPaI//ZVjtBMT1ib/ACxtVo48nz/RRyj6hu5iPSX/AHH/ANkpNKk272jc31AIP2ItWHXZ/wDX17MiH/xQ82qTP4755+Q4/pSZRyfP9IzcQR19FARkq/uievJ8yepW9oGnB55VJy0VidzmpMU+iDfGvTtT0Zmw0FwWdjU4rYM24Gl5AUENo/G0gvNNCpxxS7nsZsLuUOoyyhFyRoxVcnLZXZSVrd21c3k4paaK+g9QbHsPTovG+0sI7xxHqo9D1k8rqRP0Zw2SoK7LaSxwtyl2s0qNrLApYuna06HhUa1rzpRSusGZ59r4K+LjWOjnXt5KSi48pL2keUx2hXxNUomIvuz5hI2GMTQ0nUHREELdye08j27VzcMSKZAuPJgxylbR245zSooyHFxsqEUfKMMCdsSslGqBq2zrOxOc2Nw3Lvc7V49h5HReR41jojZcl+wkckDgLy+o+j45J72W0jKm/I059HkyC+RgaGtsuc4gD6eqqh7NAt3GVo43A7XUSejfcrLl7QNa0UwBxq2MvZtN3uc7nd5c35Fb2Nro2Cf/AL0abuDnyYu0D4erWuPFkfDxZ6ItZYrjhBbRRDocTmODZml7QdzOBXC5F0jKIJ56fVdG92O534hzHckRGRzn93EeTUjbuzYouFHnjhaEv4cMJb+GAIaLe7DaxjQbJAY4kuPT4eP0Txcl35+AraPPvD8lBwb6/qVu5em48k5LXiNhdYDQ4N5/I0+Ij045+S6zTNNxWB9QRu7oh0z9sMkghd5sDrcXgeIg7h6eiu80Ur5IuLR5/jxNI+N1/wA37pmsF1vd911euw4jxF4se6Jlez/DMl3tcxrW7r6cEUsBnZy3MJmDGvBczvKZYBqtzuG35WtGafd0NzSpFGS3aLbI8/Ufsmxnl3WR/wBwu20fs5C47IGwzOFby4961gF2XP8AExpPhAa3nk9EFr2HA3vWPiia4O2+ABrYn9QGzMb4gW9Q4A30S7x7foFO5cf9OdmaB0lefqP2QEjzfxu+6vGktc6xkNEYLGucdx2F3X3aD5rsNP0DHhiaZfwzm2XPmL4JHOZRI2kvIPkKEfn5+bXGC737hZSb8q95wxYPU/conGgYQbP6u/ddPmaXjujZI7GMW6NzviEYfIaMewN6s27iTtFGrXPY2lsMgBkIYeDwSWn1JDfE32F0jupLuCKd9iiHZu8v0P8AVdDoeC2RzjdBrbvjzK0cfR8RjBb8VzQOZA+J73Oo806QnrXhAb59FTG3HEUWUIth3Uxm953ube9wYQR3Y4PR3n5KM539m7KQddyT8HxEN5rqeg+/RHYTZIvFtNfmq2/dZWpdrt9lsbQTVyk7to/KGltNHtSoHaAuZ3YkI3Auk27gzi9rAw/PnhJWRr0kUU4nS5mrFzaXN5MVm0VizmQk7do4oXdcC+fe0Q7HBArr5+nypVxQjFcIpSa4MMworDzHRmwVbPHSFe1WcIyVMFNGrkdpJHN22uczpy60Q6NUPhQhghDsiU7aMWaNCSMWzPEg5GLqickomXsSRhjSVCehOBvIWmXF5F+wWbFlMF1z6I3FyTYIC55t96KwpmljYnIFLt9J7FOkYHuO2+nquQwZHFwcV7NouW0xMJIBoAhefmnLZK6L5G4QtHm+udmnwHnkeR9VjMwXE0AV6vruVE4BlBxv7Ll9S1fHx/i2g+TRVo4sk+3c0cjcVa5MHH0SQ/wrVx+zbvM0qMXtPJLZjj2sHWRynpuqyOLpZH3G2/QApcuZxsrGE5IqzOwrX9Jgz6Bw/sqn9kJ2RmFuW1zPi7s72Nvr0F+fKo1DtU0lwiYTfQkoaPLyXkEkNSp55LtS9o6x+0Am7PzAkWHV4SRI3oPLxV6KGIx+K7vHRNe0/mLSQfIhzSSFqNxL5c4knqrPw0Y6qyc+0hniVHLahk968vLw0nn4lV3l7bkFgbWmxuAHQX1Wnq+jMdboiAfynofb0XK5Icw04EFdWOKkqRyZPQfKNrHynMfv3B98PBN7h7+R+a0NV110rQwCqFeJwdXlxwOfmf0XJtyVa3LRlg5uuSayqqNaCR4Fd4RVhvJ8IPXafJRy5HuDW77DbLWigxpPUho4BPyWeMtP+LC2krsO8KOg0rWnRNcHRh24bTy0A+9g/wD7yWfNkkyGQCNlnhrGtaxvyA/dZrstVOylo4qdpAeRG27NNcvBNFu4+J+w/wAIJvaPkKVGPktY9rrBrnqRysnvbWlp+lPkILvA31PX6BF41FcmjNyfCNfVNY/EFgjjjZtHJY1u97ulufQ8vJNi4E7+lmht6sFN8wOeFr4OFAxoa0e7j1J+audhs/hNLllKlUTrhiXmD6d2SyHHcDGxp673AmvZoK1sP/o9a07nZAPNhrW1X1JN/ZBNknjFMcCB5FQHaJzSRK035USuaUs/l8AvFH10dQezxaAGm6Q8mkSDoFRomuMeSA93Tht839VazXJ9zgKNfwHh1Kcc0k6YdJ+TszMzT5BZIKCGG+rpdJidqonu2St2O6eLpfut3Fw45C0cUT1FLoeWaRN5HH7R5+MB5F7SgsiEjyXtowY2t2hra9KC837Ywd3KQ2qPNLRzzU9WhceZZG0kcRMEJIP+aPyZyLtgKzzOyjusHyXfGQk+ActSTtfH5vTqu5G0DRNARsLkEwouBtlaXYaBu6HM0Ss39L+VX816XENzD3bgbFMoir915MYCBz0RemZ8sD2vjcTXHdk+Et9B6crkyY1PsWcW+UemsxiGFg4k28E/nr1915fmadKx73ZAPeWTz0+nqF22lduIS1xywWyX4AGBzA0dD15N/wBlu5GqYrmN3OhIAujRab9RsNfRShtB00Km4vlHBY0rX4vdtcGvsVbmjcfSgLKI1KMHHELi2M+Uj/C2/TjqflS2jomnGpXd2xpJfuZLO13u2Oy0fUfRcdlZzmvc2O5Ymu2wTPcT3TK+Km/xfp8lHwG3cfXZ1Ry7WqG07AbH1+IUSDwRfI4R5yAPNWYGsQzDupGN5fsicxoEkrgPimnPiDfYcoSbSphvJ7tzRzuje1zdp6edn6WulT+9wLGSXCHkzgPNB5Gp/NVOhKokwyUycTS38gXJ1I+qzMnOJ4PPutSXTUDLp6vCcDkyY8rMZ/y4UfEtJ2CqzhrqWSJxvBNAW5yW5yPj09zuACVYdIkHOx32tDxYG8HIZllOAUZ+EKcYiPiI3gzFi5O3oB7+a04M8nzQDcREw4yhNxZeEJo2cbL+a0Isz5rFx4bIA5PQDzJW/BoEpbyx7X9Q19MtvqN9X9FyTlFdzrjskWNzR6qE72PFGkRpkUcDXnMxHSNPwPZM0Fn8zGmx9VDKypcdxOPFG+CUbxvbHK5oDbLSbsf8FNZI3S/gb0zJ0/DcJwYyTXicBy4N9upXSSP7yRswBaxvDpfEA4jqPkfdcyNQfMIMdsjWtDhtdsf/AINnlxO7ir6D0XUar2c7yidQJsAPLWM7qYgfxMY/cHfOiky4nOSb48hoZFBV3MXXM+N8tNHydVke66bsPJON133Q5Y4/m9B6q7TsLTIK7stBA2uMneucfmN4oH6Ked2vxI4w5m55stEfB546MBsN6c1XVHSo6RViSybd0dO3Wi8EbeBxv+fyXGdsJhttxG6+ORuP0WJndsMqW2wNEcdbdpaRXz6LBMDid0ji53zvj2RxdM09pE4x1+yiyZ9oKalfIULIV3xQZsHMQ9EkiUyoS4K2PRePPSHi7sN3Hn6p4Ii88UB5Wg5LzOeGQ03Zt8JMnQWRAWdSD7KDHFIta4OlZDWbMpMjb6n23Or7LMa9WskWaLxyGl+FjPUE+7nEfYmkVE0AUOB6DhZLJ1e2ZTaZaMoh0uM13JHPTd0cAfQqzAklgcXQuNu4c47XOr0BI4QTZURFKo5Itqhqi+5qPyHSDYIwL5e6rc93qSefp0WtpvZyR3iDCfTyo+qp7MRB8rQfVerwRhoAAXkdRklB6xOfPnWFJJHl+safKB/jtsdN1DcB7+axdSzMdkfdtg3muHbGiW//ADP5sfZex6pjtfG4EeS8i1NoDiPmj0uRzdMbp8qyx7VRlaO7EeO6liax1bn5EskwbFfQNYwAOP1+qUmkY5n7lmVHtAt0zwWi/JrWiySfIKOTC14p36GkJ+CdGe9gcRJd2XUb9QfVemk7bTa9nkWeM6rTcAYxuUf4PAE5jcxhJ/mF/VaeoZWLtpjmkmg0NouLj0ql5+Nbyo3B88jnUdzd3+KB7bjQK1MftQwSHKZGXB42ZZl7rddeEtAqlxZejyOWz5/BjRyJVf5CdoYfkPZJui8O+u5kkcT/ACt6e6EGlRNlMc8vdN6MeY3kvJ6DYSCEJk6pNku8IAo0JOb2+V2im6bvO6Z28jpwBX2XZGOSKW0q47fP6i6xnev8BT5MCFkjXN7yQHiy63NNAFhaQB60W31V2na3jthdE2AknncWNLnH0stuvqqIsGJvwsHv1/qimADyCWUU1y2/eN4KIQZUzm7RHHHfxU1tH5gVwfmtnS9OnfTdxfXTdbq+6DxjyF6b2VxmiIO8z5rh6qevCRLNkWGOxxeT2MkItwJ+VrCzNI2+G3CvK17aVwXbuFrSCPPqo4Oonuosh03VPLLWSOClgFbfp7oU4bR0c723Ej7FW5MqEdMvcg20dEtSUmJfWR3tfCUeNG3oG+9KjvlVJKrIk5RNAzV0NKp2V7LP70+X2VMsh8+vomolKaDZskHypDSjpRBsXXPHPQ2Ov7qDofDu3tv8vmpNk2MtzWuvz5sLbryISkU92480kqxqjBxQ/VJG5+ol4kTG7o+qujy3gUmBThdD57kdUEYuo7fiF/NFt1RoPg8+pIWZsCfuwpSxwZSLkuzNdoaed3PUokOY6ms6+ZXPNjPqpx7m8gpHi9o6yNHRnDI5tPIWACnWfRYQzpaq1CGVwO4pfDl5sqsz8kdDtcBZBpXYzr6LIfrjiA0jhVSao7+Hj1SaTfBT6wjs9J1Lunh3oV6Xp/bGBzRudR8wvE9P1RgHj6qvJ1cX4VwZ+i8V+0M548i9I9j1/tezYWx83xa87ysyyT6rKxtVDhTirBPHfX9UMPTrDxRTHKEVUS3vSmMpHVZedqgDvAisLMa8eJdbUkra4D46ugvvQeKv5KiXDjJ8TEo9rXXuQmramL4WjbdRNLOkuTSxw1opo+yt/EeSyNN1IE8ozcwm936rStPlBjnTXAa2YnopiU+iycvU2sFNQ2BrFv8AH0W0k1dAfVJOjoo8qiu27MdpxG3a/wCH19FwOVqUG3gi1jHXXA0DwufJ0vjKqFyZoSVSPdMjtnjhth1n0XDdo9XdkEv8vILjP+vm7arlZE2qvJ4Jr0SYPo5xdr4kozx4vso25JC66CZhYRRd4vRYsurvqgKWeJXk7r5Xoxwza5dCy6jnjk38m2cnonbkxPFD4lhzZEjhRKqjiPrSosPHL5JvK74RqZGWGG2nlDx6wd253J9kGYCepUxEE6xwrnkk5SbJZueXmwKVDpZDwSrQwJynVLhIVxvuDdykr7TptmDVFIKkCnSRoCHBUgUkkgyJBye0klhiVpwnSQGTFQSoJJLUMLYm7sJ0lqCRcxR7spJLGocQpyw+RSSWNqiNO9T91DuCepSSW7A1RLuKS2O9T90klg6obuSrGwpJLMyih+5U2RJkkoaRMxhR2BJJYzREgJkkk1CMa01pJIi2MSolySSwBi5RJSSWFbI7k6SSagH/2Q==');">
+        <div class="hero-text">
+            <h2>Indian Crafts - Painting Collection</h2>
+            <p>Embrace the elegance of traditional Indian craftsmanship.</p>
+            <a href="#products" class="btn">Explore Now</a>
+        </div>
+    </section>
+    <section id="products" class="container">
+        <h2>Explore Our painting Collection</h2>
+        <div class="product-grid">
+            <div class="product"></div>
+                <img src="https://m.media-amazon.com/images/I/81bLb1uwGJL._AC_UF1000,1000_QL80_.jpg" height="100px" alt="Sherwani">
+                <h3> warli painting</h3>
+                <p></p>
+                <a href="#" class="btn">Buy Now</a>
+            </div>
+            <div class="product">
+                <img src="https://images.squarespace-cdn.com/content/v1/56c462e37da24f9466fa8ed8/1617449721649-86ECBWGBKGRWJWLE70KS/kalamkari-painting-1537182165-4310998.jpeg"  height="100px" alt="ROZLAND Men Black Embroidery Cotton Kurta">
+                <h3>kalamkari Art</h3>
+                <p></p>
+                <a href="#" class="btn">Buy Now</a>
+            </div>
+            <div class="product">
+                <img src="https://lotusarise.com/wp-content/uploads/2023/06/Madhubani-Paintings-1024x752.jpeg" alt="Handmade Mens Mirror Work Chevron Kurta Pyjama">
+                <h3>Madhubani Art</h3>
+                <p></p>
+                <a href="#" class="btn">Buy Now</a>
+            </div>
+            <div class="product">
+                <img src="https://5.imimg.com/data5/SE/AU/VI/SELLER-67665279/golden-painting-tanjore-art-paintings-500x500.png" alt="Cotton dhoti">
+                <h3>Tanjaore Art</h3>
+                <p></p>
+                <a href="#" class="btn">Buy Now</a>
+            </div>
+            <div class="product">
+                <img src="https://rukminim2.flixcart.com/image/850/1000/xif0q/painting/i/o/2/na-12-1-gc12x8t1665-sikhash-original-imagz6r6v2fyqhtf.jpeg?q=90&crop=false" alt="Maroon Dhupion Silk Traditional Wear Plain Dhoti Kurta">
+                <h3> Rajasthani Art</h3>
+                <p></p>
+                <a href="#" class="btn">Buy Now</a>
+            </div>
+            <div class="product">
+                <img src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzQvkzsdbFpoogsHyL6e2JkDrUsCaJTOq5UIm1D36Q0X-sERTDGrDumjihyjFdy3fABLU&usqp=CAU" alt="dhoti">
+                <h3> Patachitra Painting</h3>
+                <p></p>
+                <a href="#" class="btn">Buy Now</a>
+            </div>
+            <div class="product">
+                <img src="https://cdn.exoticindia.com/images/products/original/paintings-2019/ldc447.jpg" alt="Kantha Quilt">
+                <h3>Mysore painting</h3>
+                <p></p>
+                <a href="#" class="btn">Buy Now</a>
+            </div>
+            <div class="product">
+                <img src="https://indianartideas.in/articleimages/1413870502Untitled.png" alt="Kashmiri Shawl">
+                <h3>patachitra</h3>
+                <p></p>
+                <a href="#" class="btn">Buy Now</a>
+            </div>
+<div class="product">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRXTLQ0M_zw4IWIzz2bjid59kAuGHYdqbwsQ&s" alt="Kashmiri Shawl">
+                <h3>kerala murals</h3>
+                <p></p>
+                <a href="#" class="btn">Buy Now</a>
+            </div>
+        </div>
+    </section>
+    <section id="testimonials" class="container">
+        <h2>What Our Customers Say</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial">
+                <p>"The painting I bought is absolutely stunning. The quality and craftsmanship are exceptional."</p>
+                <h4>- Shiva, Mumbai</h4>
+            </div>
+            <div class="testimonial">
+                <p>"I love the unique pieces. They add a perfect touch to my traditional outfits."</p>
+                <h4>- Krishna, Delhi</h4>
+            </div>
+            <div class="testimonial">
+                <p>"The customer service is fantastic. They helped me pick the perfect gift for my mother."</p>
+                <h4>- Karthikeya, Bangalore</h4>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h3>About HASTAKALA</h3>
+                    <p>HASTAKALA is dedicated to preserving and promoting the rich heritage of Indian crafts.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="index.html#products">Products</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <p>Email: info@hastakala.com</p>
+                    <p>Phone: 123-456-7890</p>
+                </div>
+            </div>
+            <p>&copy; 2024 HASTAKALA. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
